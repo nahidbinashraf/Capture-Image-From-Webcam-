@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Capture Image</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4">
+		<canvas id="canvas" width=320 height=240 style="display:none"></canvas>
+		<img class="img-responsive img-rounded" id="photo" alt="The screen capture will appear in this box."src="http://via.placeholder.com/320x240">
+		<br/>
+		  <!-- Trigger the modal as wll as VideoMedia with a button -->
+		<button type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" onclick="startCapture()">Open Camera</button>
+		</div>
+	</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+			<video id="player" style="width: 100%; height: auto; margin:0 auto; frameborder:0;" autoplay="autoplay"></video>
+        </div>
+        <div class="modal-footer">
+		  <button class="btn btn-primary center-block" id="capture" type="button"  data-dismiss="modal">Take Photo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="capture.js"></script>
+</body>
+</html>
